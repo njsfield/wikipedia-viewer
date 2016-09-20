@@ -5,16 +5,23 @@ var script;
 
 var globalData = Object.create(null);
 
+var prevSearch, currentSearch;
+
 // event listener to handle wikipedia request
 
 search.addEventListener("input", function(){
+
+    clearTimeout();
 
     var that = this;
 
     setTimeout(function(){
 
-        if (that.value) retrieveWikiPages(that.value);
+        currentSearch = that.value;
+
+        if (currentSearch) retrieveWikiPages(that.value);
         else results.innerHTML = "";
+
 
     }, 500);
 
@@ -37,8 +44,13 @@ function retrieveWikiPages(value) {
 
     script.src = url;
 
-    head.appendChild(script);
-    head.removeChild(script);
+    if (currentSearch !== prevSearch) {
+        head.appendChild(script);
+        head.removeChild(script);
+    }
+
+    prevSearch = value;
+
 }
 
 
@@ -60,13 +72,8 @@ function generateElements(){
     for (var sub in globalData) {
 
         var container = document.createElement("div");
-        var img = document.createElement("img");
         var title = document.createElement("h2");
         var extract = document.createElement("p");
-
-        var imageSource = globalData[sub].thumbnail;
-        imageSource = (imageSource)? imageSource.source : "";
-
 
 
         container.classList.add("container");
@@ -75,16 +82,36 @@ function generateElements(){
 
 
         title.innerHTML = globalData[sub].title;
-        img.src = imageSource;
         extract.innerHTML = globalData[sub].extract;
 
 
-        container.appendChild(img);
         container.appendChild(title);
         container.appendChild(extract);
 
+        container.style.opacity = 0;
 
         results.appendChild(container);
     }
+
+    var subs = document.querySelectorAll('.container');
+
+    var count = 0;
+
+    var interval = setInterval(function(){
+
+        var current = subs[count];
+
+        if (!current) {
+            clearInterval(interval);
+            return;
+        };
+
+        current.style.opacity = 1;
+
+        count++
+
+
+    }, 100);
+
 
 }
