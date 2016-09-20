@@ -108,7 +108,7 @@ function generateElements(){
 
         current.style.opacity = 1;
 
-        count++
+        count++;
 
 
     }, 100);

@@ -19,6 +19,7 @@
     margin: 0.4rem;
     text-align: center;
     border: 1px solid black;
+    transition: all .5s ease;
 
 }
 
@@ -94,10 +95,6 @@
     left: .75rem;
 }
 
-
-/*** container ***/
-
-.container {}
 
 
 
