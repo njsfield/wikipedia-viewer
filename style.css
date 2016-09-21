@@ -78,20 +78,23 @@ form {
 #search {
 
     display: inline-block;
-    font-size: 1rem;
-    width: 20rem;
+    font-size: .8rem;
+    width: 14rem;
     padding: .5rem;
     border-radius: 5px;
     box-shadow: 0;
     border: 1px solid #fcf5df;
-
 }
+
+
+
 
 /** search bar initial load **/
 
 #searchbox {
     position: absolute;
     top: 0;
+    width: 20rem;
     left: calc(50% - 10rem);
     transition: all .5s ease;
     margin-top: 1rem;
@@ -103,4 +106,23 @@ form {
     margin-top: 0 !important;
 }
 
+/** wiki logo **/
+
+#wiki-logo {
+    width: 2rem;
+    height: 2rem;
+    margin-left: .5rem;
+    position: absolute;
+}
+
+/** dice **/
+
+#dice {
+    position: absolute;
+    display: inline-block;
+    width: 2rem;
+    right: 0;
+    top: 0;
+    margin-right: .5rem;
+}
 
