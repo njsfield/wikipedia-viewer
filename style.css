@@ -10,6 +10,7 @@
 
 #page-container {
     text-align: center;
+    margin-top: 4rem;
 }
 
 .container {
@@ -79,7 +80,6 @@ form {
     display: inline-block;
     font-size: 1rem;
     width: 20rem;
-    margin: 0.4rem;
     padding: .5rem;
     border-radius: 5px;
     box-shadow: 0;
@@ -87,7 +87,20 @@ form {
 
 }
 
+/** search bar initial load **/
 
+#searchbox {
+    position: absolute;
+    top: 0;
+    left: calc(50% - 10rem);
+    transition: all .5s ease;
+    margin-top: 1rem;
 
+}
+
+.vertical-center {
+    top: calc(50% - 1rem) !important;
+    margin-top: 0 !important;
+}
 
 

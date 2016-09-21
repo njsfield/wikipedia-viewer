@@ -1,3 +1,4 @@
+var searchBox = document.getElementById("searchbox");
 var search = document.getElementById("search");
 var head = document.getElementsByTagName('head')[0];
 var results = document.getElementById('results');
@@ -61,6 +62,8 @@ function json_callback(data) {
     globalData = data.query.pages;
 
     generateElements();
+
+    searchBox.classList.remove("vertical-center");
 
 }
 
