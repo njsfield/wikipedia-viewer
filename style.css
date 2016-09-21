@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    font-family: Times New Roman;
+    font-family: 'Roboto', sans-serif;
 }
 
 
@@ -19,7 +19,8 @@
     margin: 0.4rem;
     text-align: center;
     border: 1px solid black;
-    transition: all .5s ease;
+    transition: opacity .5s ease;
+    cursor: pointer;
 
 }
 
@@ -31,13 +32,18 @@
     height: 3.5rem;
     bottom: 0;
     left: 0;
-    background: linear-gradient(rgba(255,0,0,0), rgba(255,255,255,1), rgba(255,255,255,1));
+    background: linear-gradient(rgba(255,0,0,0), rgba(255,255,255,1));
+}
+
+.container:hover {
+    border: 3px solid black;
+
 }
 
 .title {
     display: block;
     border-bottom: 1px solid black;
-    height: 2rem;
+    height: 1.8rem;
     overflow: wrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -45,7 +51,7 @@
 }
 
 .extract {
-    height: 7.2rem;
+    height: 9.8rem;
     margin-bottom: 0;
     display: inline-block;
     white-space: wrap;
