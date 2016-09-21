@@ -67,6 +67,9 @@
     white-space: wrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-weight: 100;
+    color: lightgray;
+    line-height: 1.5rem;
 }
 
 form {
