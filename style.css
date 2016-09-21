@@ -26,6 +26,8 @@
 
 }
 
+/** container fade for overflowing text ***/
+
 .container:after{
     content: "";
     display: inline-block;
@@ -47,14 +49,12 @@
 
 
 
-
-
 .title {
     display: block;
     border-bottom: 1px solid #fcf5df;
     height: 1.8rem;
-    overflow: wrap;
-    overflow: hidden;
+    overflow:hidden;
+    white-space: nowrap;
     text-overflow: ellipsis;
 
 }
