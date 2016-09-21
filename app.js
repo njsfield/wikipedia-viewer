@@ -93,6 +93,12 @@ function generateElements(){
 
         container.style.opacity = 0;
 
+        container.addEventListener("click", (function(link){
+            return function(){
+                window.location = "https://en.wikipedia.org/?curid=" + link;
+            }
+        })(globalData[sub].pageid))
+
         results.appendChild(container);
     }
 
