@@ -6,13 +6,15 @@ var script;
 
 var globalData = Object.create(null);
 
+var api = "https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=";
+var callback = "&callback=json_callback";
+
 var prevSearch, currentSearch;
+
 
 // event listener to handle wikipedia request
 
 search.addEventListener("input", function(){
-
-    clearTimeout();
 
     var that = this;
 
@@ -22,7 +24,6 @@ search.addEventListener("input", function(){
 
         if (currentSearch) retrieveWikiPages(that.value);
         else results.innerHTML = "";
-
 
     }, 500);
 
@@ -34,10 +35,6 @@ search.addEventListener("input", function(){
 function retrieveWikiPages(value) {
 
     var title = value;
-
-    var api = "https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=";
-
-    var callback = "&callback=json_callback";
 
     var url = api + title + callback;
 
